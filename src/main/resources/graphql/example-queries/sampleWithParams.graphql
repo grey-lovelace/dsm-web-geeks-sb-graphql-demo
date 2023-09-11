@@ -1,0 +1,5 @@
+query sample($divisor: Int) {
+	sampleWithParams(divisor: $divisor) {
+		value
+	}
+}

@@ -1,0 +1,27 @@
+query peopleWithParams($name: String, $age: Int) {
+	peopleWithParams(
+		filter: {
+			name: $name
+			age: $age
+		}
+	) {
+		items {
+			id
+			name
+			age
+			addresses {
+				address
+				state
+			}
+		}
+		pageInfo {
+			totalPages
+			totalItems
+			page
+			perPage
+			hasNextPage
+			hasPreviousPage
+		}
+		
+	}
+}

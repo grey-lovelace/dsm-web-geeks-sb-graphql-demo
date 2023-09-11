@@ -1,0 +1,25 @@
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+    org.flywaydb: INFO
+
+spring:
+  # datasource:
+  #   username: ${DB_USERNAME:postgres}
+  #   password: ${DB_PASSWORD:postgres}
+  #   driver-class-name: org.postgresql.Driver
+  #   url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+  # flyway:
+  #   enabled: true
+  #   url: ${spring.datasource.url}
+  #   password: ${spring.datasource.password}
+  #   user: ${spring.datasource.username}
+  #   driver-class-name: ${spring.datasource.driver-class-name}
+  # jpa:
+    # show-sql: true
+  # security:
+  #   oauth2:
+  #     resourceserver:
+  #       jwt:
+  #         issuer-uri: ${AUTH_TENANT:http://localhost:8082/realms/fake-auth-tenant}

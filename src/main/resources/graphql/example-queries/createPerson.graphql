@@ -1,0 +1,22 @@
+mutation createPerson {
+	createPerson(
+		createPerson: {
+			name: "Grey",
+			age: 34
+			addresses: [
+				{
+					address: "SomeStreet",
+					state: "IA"
+				}
+			]
+		}
+	) {
+		id
+		name
+		age
+		addresses {
+			address
+			state
+		}
+	}
+}

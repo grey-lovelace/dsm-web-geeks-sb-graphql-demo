@@ -1,0 +1,36 @@
+# Object used to change pagination options of queries.
+# All values have defaults, so feel free to leave blank unless you would like to change the behavior.
+input PaginationRequest {
+    # Set to false to bypass paging entirely.
+    # You will still get back a pagination wrapped response, but the page size will match the total records
+    enabled: Boolean! = true
+
+    # What page to return
+    page: Int! = 0
+
+    # Number of items that constitutes a page
+    perPage: Int! = 20
+}
+
+
+# Object used to provide information about pagination context returned in a query.
+# Use this to find if a result set is exhausted or not when using paging.
+type PaginationInfo {
+    # Total number of pages
+    totalPages: Int!
+
+    # Total number of items that exist and match current filter settings, if any 
+    totalItems: Int!
+
+    # Current page number
+    page: Int!
+
+    # Number of items per page
+    perPage: Int!
+
+    # When paginating forwards, are there more items?
+    hasNextPage: Boolean!
+
+    # When paginating backwards, are there more items?
+    hasPreviousPage: Boolean!
+}

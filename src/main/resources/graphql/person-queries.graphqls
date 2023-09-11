@@ -1,0 +1,48 @@
+# type Query {
+#     people: [Person!]!
+
+#     person(id: ID!): Person
+
+#     peopleWithParams(
+#         paging: PaginationRequest! = {}
+#         filter: PersonFilter! = {}
+#     ): People!
+# }
+
+# type Mutation {
+#     createPerson(createPerson: CreatePerson): Person!
+# }
+
+type Person {
+    id: ID!
+    name: String!
+    age: Int!
+    addresses: [Address!]!
+    # addresses(state: String): [Address!]!
+}
+
+type Address {
+    address: String!
+    state: String!
+}
+
+# input CreatePerson {
+#     name: String!
+#     age: Int!
+#     addresses: [CreateAddress!]!
+# }
+
+# input CreateAddress {
+#     address: String!
+#     state: String!
+# }
+
+# input PersonFilter {
+#     name: String
+#     age: Int
+# }
+
+# type People {
+#     items: [Person!]!
+#     pageInfo: PaginationInfo!
+# }

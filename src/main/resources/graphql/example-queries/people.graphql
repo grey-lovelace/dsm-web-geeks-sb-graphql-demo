@@ -1,0 +1,11 @@
+query people {
+	people {
+		id
+		name
+		age
+		addresses {
+			address
+			state
+		}
+	}
+}

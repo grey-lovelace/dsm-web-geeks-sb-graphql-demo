@@ -14,12 +14,6 @@ Project to showcase how to build a simple graphql API in spring boot with other 
 - Graphql schema!
     - Not documentation, actually functional
     - Queries, mutations, and types
-- Set up our DB
-    - Postgres running in docker compose
-    - Flyway
-    - Spring Configs
-    - Spring JPA
-    - Entities
 - Create graphql query
     - Controller
     - Query
@@ -29,10 +23,27 @@ Project to showcase how to build a simple graphql API in spring boot with other 
         - Is there a schema mapping method named the same as this field that takes the object I am currently in as a param?
             - Can also be accomplished with annotations
         - Is there a getter method on the object I am curently in?
+- Set up our DB
+    - Postgres running in docker compose
+    - Flyway
+    - Spring Configs
+    - Spring JPA
+    - Entities
 - Mutations
+- Exception Handling
 - Adding Easy Pagination and Filtering
 - N+1 Problem
     - Batch Mapping
     - Schema Mapping + Loaders
+    - Using subgraph arguments
 - Adding Security
     - Oauth2
+    - Method level security
+        - @PreAuthorize("permitAll()")
+        - @PreAuthorize("isAuthenticated()")
+    - Better auth error messaging
+
+
+- Example queries
+
+Example queries found in [src/main/resources/graphql/exmaple-queries](src/main/resources/graphql/exmaple-queries)

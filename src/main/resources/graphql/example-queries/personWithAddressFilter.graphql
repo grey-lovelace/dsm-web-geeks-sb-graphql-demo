@@ -1,0 +1,11 @@
+query person($id: ID!, $state: String) {
+	person(id: $id) {
+		id
+		name
+		age
+		addresses(state: $state) {
+			address
+			state
+		}
+	}
+}

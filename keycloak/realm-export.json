@@ -1,0 +1,75 @@
+{
+  "id": "27631050-562b-448d-aa9a-3f39a3742d54",
+  "realm": "fake-auth-tenant",
+  "displayName": "fake-auth-tenant",
+  "displayNameHtml": "<div class=\"kc-logo-text\"><span>fake-auth-tenant</span></div>",
+  "enabled": true,
+  "users": [
+    {
+      "username": "testuser1",
+      "email": "TestUser1@sourceallies.com",
+      "firstName": "Test",
+      "lastName": "User1",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "testuser1pass"
+        }
+      ]
+    }
+  ],
+  "clientScopeMappings": {
+    "account": [
+      {
+        "client": "account-console",
+        "roles": [
+          "manage-account",
+          "view-groups"
+        ]
+      }
+    ]
+  },
+  "clients": [
+    {
+      "id": "f936e0f1-a19d-4ae5-a045-e1b92bdfcc0c",
+      "clientId": "testClientDefault",
+      "name": "Local Default Test Client",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "testClientDefaultSecret",
+      "redirectUris": [
+        "http://localhost:8080/*"
+      ],
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "fullScopeAllowed": true
+    }
+  ],
+  "clientScopes": [
+    {
+      "id": "7f41d8d9-b320-4c27-8fa6-91916cccf30d",
+      "name": "email",
+      "description": "OpenID Connect built-in scope: email",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "${emailScopeConsentText}"
+      },
+      "protocolMappers": []
+    }
+  ],
+  "defaultDefaultClientScopes": [
+    "email"
+  ],
+  "keycloakVersion": "21.0.0"
+}
