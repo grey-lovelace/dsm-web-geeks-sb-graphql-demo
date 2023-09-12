@@ -17,4 +17,17 @@ public class DemoController {
         .mapToObj(Item::new)
         .toList();
 
+    @QueryMapping
+    public List<Item> sample() {
+        return items;
+    }
+
+    @QueryMapping
+    public List<Item> sampleWithParams(@Argument int divisor) {
+        return items
+            .stream()
+            .filter(item -> item.value % divisor == 0)
+            .toList();
+    }
+
 }

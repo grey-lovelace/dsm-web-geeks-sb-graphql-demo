@@ -21,13 +21,13 @@ public class CustomExceptionResolver extends DataFetcherExceptionResolverAdapter
         ForbiddenException.class, ErrorType.FORBIDDEN
     );
 
-    // @Override
-    // protected GraphQLError resolveToSingleError(Throwable ex, DataFetchingEnvironment env) {
-    //     return GraphqlErrorBuilder.newError()
-    //         .errorType(exMap.getOrDefault(ex.getClass(), ErrorType.INTERNAL_ERROR))
-    //         .message(ex.getMessage())
-    //         .path(env.getExecutionStepInfo().getPath())
-    //         .location(env.getField().getSourceLocation())
-    //         .build();
-    // }
+    @Override
+    protected GraphQLError resolveToSingleError(Throwable ex, DataFetchingEnvironment env) {
+        return GraphqlErrorBuilder.newError()
+            .errorType(exMap.getOrDefault(ex.getClass(), ErrorType.INTERNAL_ERROR))
+            .message(ex.getMessage())
+            .path(env.getExecutionStepInfo().getPath())
+            .location(env.getField().getSourceLocation())
+            .build();
+    }
 }

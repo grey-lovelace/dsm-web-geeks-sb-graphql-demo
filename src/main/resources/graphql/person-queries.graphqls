@@ -1,17 +1,17 @@
-# type Query {
-#     people: [Person!]!
+type Query {
+    people: [Person!]!
 
-#     person(id: ID!): Person
+    person(id: ID!): Person
 
-#     peopleWithParams(
-#         paging: PaginationRequest! = {}
-#         filter: PersonFilter! = {}
-#     ): People!
-# }
+    peopleWithParams(
+        paging: PaginationRequest! = {}
+        filter: PersonFilter! = {}
+    ): People!
+}
 
-# type Mutation {
-#     createPerson(createPerson: CreatePerson): Person!
-# }
+type Mutation {
+    createPerson(createPerson: CreatePerson!): Person!
+}
 
 type Person {
     id: ID!
@@ -26,23 +26,23 @@ type Address {
     state: String!
 }
 
-# input CreatePerson {
-#     name: String!
-#     age: Int!
-#     addresses: [CreateAddress!]!
-# }
+input CreatePerson {
+    name: String!
+    age: Int!
+    addresses: [CreateAddress!]!
+}
 
-# input CreateAddress {
-#     address: String!
-#     state: String!
-# }
+input CreateAddress {
+    address: String!
+    state: String!
+}
 
-# input PersonFilter {
-#     name: String
-#     age: Int
-# }
+input PersonFilter {
+    name: String
+    age: Int
+}
 
-# type People {
-#     items: [Person!]!
-#     pageInfo: PaginationInfo!
-# }
+type People {
+    items: [Person!]!
+    pageInfo: PaginationInfo!
+}

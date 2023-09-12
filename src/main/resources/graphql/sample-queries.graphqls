@@ -1,11 +1,11 @@
-type Query {
+# type Query {
 
-    sample: [Item]!
+#     sample: [Item!]!
 
-    # Same as sample, but only returns items with
-    # a value that divides evenly by the divisor
-    sampleWithParams(divisor: Int): [Item]!
-}
+#     # Same as sample, but only returns items with
+#     # a value that divides evenly by the divisor
+#     sampleWithParams(divisor: Int!): [Item!]!
+# }
 
 type Item {
     value: Int

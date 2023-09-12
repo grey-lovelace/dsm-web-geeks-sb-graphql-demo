@@ -10,7 +10,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import com.example.demo.db.Person;
-// import com.example.demo.db.PersonRepository;
+import com.example.demo.db.PersonRepository;
 import com.example.demo.exceptions.NotFoundException;
 
 import lombok.extern.slf4j.Slf4j;
@@ -19,24 +19,24 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class PersonController {
 
-    // @Autowired PersonRepository repo;
+    @Autowired PersonRepository repo;
 
-    // @QueryMapping
-    // public List<Person> people() {
-    //     return repo.findAll();
-    // }
+    @QueryMapping
+    public List<Person> people() {
+        return repo.findAll();
+    }
 
-    // @QueryMapping
-    // public Person person(@Argument UUID id) {
-    //     return repo.findById(id)
-    //         .orElseThrow(() -> new NotFoundException("No person with ID %s found".formatted(id)));
-    // }
+    @QueryMapping
+    public Person person(@Argument UUID id) {
+        return repo.findById(id)
+            .orElseThrow(() -> new NotFoundException("No person with ID %s found".formatted(id)));
+    }
 
-    // @MutationMapping
-    // public Person createPerson(@Argument Person createPerson) {
-    //     createPerson
-    //         .getAddresses()
-    //         .forEach(address -> address.setPerson(createPerson));
-    //     return repo.saveAndFlush(createPerson);
-    // }
+    @MutationMapping
+    public Person createPerson(@Argument Person createPerson) {
+        createPerson
+            .getAddresses()
+            .forEach(address -> address.setPerson(createPerson));
+        return repo.saveAndFlush(createPerson);
+    }
 }
